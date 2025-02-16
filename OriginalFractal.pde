@@ -1,34 +1,31 @@
-int setup = 2; 
-float ter =0 ; 
-float en = 0 ; 
+float ter = 0;
+
 void setup() {
-  size(700,700); 
-  rectMode(CENTER); 
-  
-} 
+  size(700, 700);
+  rectMode(CENTER);
+}
+
 void draw() {
-//background(0); 
-ter +=.000611; 
-System.out.println(ter); 
-if ( ter > 2) {
-ter *=- 1;} 
-//if (en > 0) {  
-//    en = 0;
-//}
-recursion(0,0,500);} 
-void recursion(int x, int y , int size){
-  beginShape();                                                                              
-  curveVertex(x,y);
-  curveVertex(x+size+(size*cos(ter)),(size)+y+(size*sin(ter))+(size*sin(ter*ter*size)));
+  background(0);
+  ter += 0.011;  // Control oscillation
+  beginShape();
+  recursion(100, 400, 500);
+  endShape();
+}
+
+void recursion(int x, int y, int size) {
  
-  curveVertex(x+(size*cos(ter)),size+size+y+(size*sin(ter)));
-  curveVertex(x+size+(size*cos(ter)),size+size+size+y+(size*sin(ter)));
-  endShape();  
+  curveVertex(x, y);
+  curveVertex(x, y);
+
+
+  curveVertex(x + size + (size * cos(ter)), y + (size * sin(ter*(size/20)))); 
+  curveVertex(x + size + (size * cos(ter)), y + (size * sin(ter*(size/20)))); 
  
-  if(size>20){
+  if (size > 20) {
     recursion(x,y/2,size/2);
     recursion(x+size/2,y/2+size/2,size/2);
     recursion(x+size/2,y-size/2,size/2);
     recursion(x+2*size/2,y-size/2,size/2);
-  } 
-} 
+  }
+}
