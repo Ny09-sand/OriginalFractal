@@ -14,11 +14,13 @@ void draw() {
 }
 
 void recursion(int x, int y, int size) {
- 
+  
   curveVertex(x, y);
   curveVertex(x, y);
-
-
+  // experiment 
+  // Was planning to add more than lines
+  // Repeat of line 23 induces curvature
+  
   curveVertex(x+size+(size*cos(ter)), y+(size*sin(ter*(size/20)))); 
   curveVertex(x+size+(size*cos(ter)), y+(size*sin(ter*(size/20)))); 
  
