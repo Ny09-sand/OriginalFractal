@@ -19,8 +19,8 @@ void recursion(int x, int y, int size) {
   curveVertex(x, y);
 
 
-  curveVertex(x + size + (size * cos(ter)), y + (size * sin(ter*(size/20)))); 
-  curveVertex(x + size + (size * cos(ter)), y + (size * sin(ter*(size/20)))); 
+  curveVertex(x+size+(size*cos(ter)), y+(size*sin(ter*(size/20)))); 
+  curveVertex(x+size+(size*cos(ter)), y+(size*sin(ter*(size/20)))); 
  
   if (size > 20) {
     recursion(x,y/2,size/2);
